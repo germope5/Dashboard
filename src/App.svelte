@@ -2,14 +2,14 @@
   App.svelte — Showcase de componentes Atomic Design
   Esta vista de ejemplo muestra los tres niveles: Átomo, Molécula y Organismo.
 -->
-<script>
+<script lang="ts">
   import Button from "./components/atoms/Button.svelte";
   import SearchBar from "./components/molecules/SearchBar.svelte";
   import Sidebar from "./components/organisms/Sidebar.svelte";
 
-  let searchQuery = "";
+  let searchQuery: string = "";
 
-  function handleSearch(e) {
+  function handleSearch(e: CustomEvent<{ query: string }>): void {
     alert(`Buscando: ${e.detail.query}`);
   }
 </script>
