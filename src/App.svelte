@@ -4,8 +4,21 @@
 -->
 <script lang="ts">
   import Button from "./components/atoms/Button.svelte";
+  import Input from "./components/atoms/Input.svelte";
   import SearchBar from "./components/molecules/SearchBar.svelte";
   import Sidebar from "./components/organisms/Sidebar.svelte";
+
+
+
+  // Opción 2: Objeto con propiedades (más escalable para formularios)
+  let formData = {
+     nombre: "",
+     apellido: "",
+     email: "",
+     password: "",
+     number: "",
+     disabled: ""
+   };
 
   let searchQuery: string = "";
 
@@ -46,6 +59,52 @@
         <Button label="Small" variant="primary" size="sm" />
         <Button label="Large" variant="primary" size="lg" />
         <Button label="Disabled" variant="primary" disabled={true} />
+      </div>
+    </section>
+    <section class="section">
+      <h2 class="section__title">
+        <span class="section__badge section__badge--atom">Átomos</span>
+        Input
+      </h2>
+      <p class="section__desc">
+        Te permite ingresar una entrada de: texto,contraseña,etc Acepta
+        <code>type</code>,
+        <code>placeholder</code>,
+        <code>label</code>,
+        <code>disabled</code> como props.
+      </p>
+      <div class="section__demo">
+        <Input
+          id="nombre"
+          label="Nombre"
+          bind:value={formData.nombre}
+          type="text"
+        />
+        <Input
+          id="apellido"
+          label="Apellido"
+          bind:value={formData.apellido}
+          type="text"
+        />
+        <Input id="email" label="Email" bind:value={formData.email} type="email" />
+        <Input
+          id="password"
+          label="Password"
+          bind:value={formData.password}
+          type="password"
+        />
+        <Input
+          id="number"
+          label="Number"
+          bind:value={formData.number}
+          type="number"
+        />
+        <Input
+          id="disabled"
+          label="Disabled"
+          bind:value={formData.disabled}
+          disabled={true}
+        />
       </div>
     </section>
 
