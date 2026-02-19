@@ -1,0 +1,28 @@
+/* === Global Reset & Base Styles === */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #0a0a1a;
+  color: #e0e7ff;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+#app {
+  width: 100%;
+}
